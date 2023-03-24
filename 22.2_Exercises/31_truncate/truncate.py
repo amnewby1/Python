@@ -26,5 +26,11 @@ def truncate(phrase, n):
     """
 
     if n < 3:
-        return "Truncation must be at least 3 characters"
+        raise Exception("Truncation must be at least 3 characters")
+    else:
+        if (n > len(phrase)):
+            return phrase
+        return phrase[0:n-3] + "..."
+
+
     

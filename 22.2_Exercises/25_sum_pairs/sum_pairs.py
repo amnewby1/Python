@@ -22,3 +22,12 @@ def sum_pairs(nums, goal):
         ()
     """
     
+    target_pairs = {}
+    for i in range(len(nums)):
+        for j in range(i+1, len(nums)):
+            if (nums[i] + nums[j] == goal):
+                target_pairs[j-i] = (nums[i], nums[j])
+
+    if (min(target_pairs.keys())):
+        return target_pairs[min(target_pairs.keys())]
+    return ()
